@@ -19,11 +19,10 @@ const Login = () => {
                     <label className={css(styles.reservas1)}>Senha</label>
                     <input className={css(styles.input)} placeholder='senha de 6 digitos'/>
                 </div>
+                <div className={css(styles.button)}>
+                    <button className={css(styles.entrar)}>Entrar</button>
+                </div>
             </div>
-            <div className={css(styles.button)}>
-                <button className={css(styles.entrar)}>Entrar</button>
-            </div>
-
         </main>
     )
 }
@@ -85,7 +84,7 @@ const styles = StyleSheet.create({
     },
 
     containerLogin: {
-        height: '50%',
+        height: '65%',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
@@ -99,7 +98,12 @@ const styles = StyleSheet.create({
     },
 
     entrar: {
-
+        background: '#F5F5F5',
+        borderRadius: '5px',
+        width: '183px',
+        height: '45px',
+        color: '#FF5A00',
+        fontSize: '18px',
     }
 
 });
