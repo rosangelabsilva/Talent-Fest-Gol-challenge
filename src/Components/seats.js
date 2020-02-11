@@ -1,4 +1,5 @@
 import React from 'react';
+
 function Seats (props){
     return(
         <img className={props.className}
