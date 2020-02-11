@@ -95,6 +95,8 @@ const styles = StyleSheet.create({
         display: 'flex',
         justifyContent: 'center',
         color: 'White',
+        fontSize: '1.5rem',
+
     },
 
     entrar: {
@@ -104,6 +106,7 @@ const styles = StyleSheet.create({
         height: '45px',
         color: '#FF5A00',
         fontSize: '18px',
+        fontWeight: 'bold',
     }
 
 });
