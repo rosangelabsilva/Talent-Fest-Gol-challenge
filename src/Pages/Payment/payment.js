@@ -14,43 +14,42 @@ const Payment = () => {
         history.push('/confirmation')
     }
     return(
-        <>
+        <div className ={css(styles.containerPayment)}>
             <Header title ={"Pagamento da reserva"}/>
-            <Seats />
+            {/* <Seats /> */}
             <main className ={css(styles.payment)}>
                 <form action="/processar_pagamento" method="post" id="pay" name="pay" >
-                    <fieldset>
+                    {/* <fieldset> */}
                         <ul>
-                            <li>
-                                <label for="cardNumber">Número do cartão:</label>
-                                <input type="text" id="cardNumber" placeholder="4509 9535 6623 3704"/>
+                            <li className ={css(styles.li)}>
+                                <label className ={css(styles.informationInput)} for="cardNumber">Número do cartão:</label>
+                                <input type="text" id="cardNumber" placeholder="4509 9535 6623 3704" className ={css(styles.InputPayment)}/>
                             </li>
-                            <li>
-                                <label for="securityCode">Chave de Segurança:</label>
-                                <input type="text" id="securityCode"  placeholder="123" />
+                            <li className ={css(styles.expirationKey)}>
+                                <li className ={css(styles.li)}>
+                                    <label className ={css(styles.informationInput)}>Chave de Segurança:</label>
+                                    <input type="text" id="securityCode"  placeholder="123" className ={css(styles.securityKey)}/>
+                                </li>
+                                <li className ={css(styles.li, styles.securityKey)}>
+                                    <label className ={css(styles.informationInput)}>Vencimento:</label>
+                                    <input type="text" id="cardExpirationMonth"  placeholder="11/22" className ={css(styles.dueDate)} />
+                                </li>
                             </li>
-                            <li>
-                                <label for="cardExpirationMonthAndYear">Vencimento:</label>
-                                <input type="text" id="cardExpirationMonth"  placeholder="11/22"  />
+                            <li className ={css(styles.li)}>
+                                <label for="cardholderName" className ={css(styles.informationInput)}>Nome do titular:</label>
+                                <input type="text" id="cardholderName" placeholder="AComo está gravado no cartão" className ={css(styles.InputPayment)}/>
                             </li>
-                            <li>
-                                <label for="cardholderName">Nome do titular:</label>
-                                <input type="text" id="cardholderName" placeholder="AComo está gravado no cartão" />
-                            </li>
-                            <li>
-                                <label for="docType">CPF:</label>
-                                <input id="docType" placeholder="555.555.555-55" ></input>
+                            <li className ={css(styles.li)}>
+                                <label for="docType" className ={css(styles.informationInput)}>CPF:</label>
+                                <input id="docType" placeholder="555.555.555-55" className ={css(styles.InputPayment)}></input>
                             </li>
                         </ul>
-                        <input type="hidden" name="amount" id="amount"/>
-                        <input type="hidden" name="description"/>
-                        <input type="hidden" name="paymentMethodId" />
-                        <Button value="Pay!" onClick = {payment}>Pagar</Button>
-                    </fieldset>
+                        <button className ={css(styles.ConfirmBuy)} onClick = {payment}>Confirmar</button>
                 </form>
             </main>
-            <Footer/>
-        </>
+            <Footer
+            />
+        </div>
     )
 
 }
@@ -62,9 +61,64 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        backgroundColor: '#FF5A00',
-        height: '100vh',
         justifyContent: 'space-around',
+        alignItems: 'center'
+    },
+
+    containerPayment: {
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+    },
+
+    ConfirmBuy: {
+        background: '#F5F5F5',
+        borderRadius: '5px',
+        width: '183px',
+        height: '45px',
+        color: '#FF5A00',
+        fontSize: '18px',
+        fontWeight: 'bold',
+        paddingLeft: '25%',
+        display: 'flex',
+        justifyContent: 'center',
+    },
+
+    ConfirmBuy2: {
+        color: '#FF5A00',
+    },
+    
+    informationInput: {
+        fontSize: '1rem',
+    },
+
+    InputPayment: {
+        width: '265px',
+        height: '35px',
+        border: '1px solid #000000'
+    },
+
+    dueDate: {
+        border: '1px solid #000000'  
+    },
+
+    securityKey: {
+        border: '1px solid #000000'  
+    },
+
+    li: {
+        listStyleType: 'none',
+        display: 'flex',
+        flexDirection: 'column',
+    },
+
+    expirationKey: {
+        display: 'flex',
+    },
+
+    securityKey: {
+        height: '2rem',
     }
 })
 
