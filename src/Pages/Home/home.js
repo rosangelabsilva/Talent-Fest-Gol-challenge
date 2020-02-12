@@ -3,8 +3,16 @@ import { StyleSheet, css } from 'aphrodite';
 import firebase from 'firebase';
 import Header from '../../Components/header';
 import { db } from '../../config';
+import Swal from 'sweetalert2'
 
 const Home = () => {
+    Swal.fire({
+        position: 'top-end',
+        icon: 'warning',
+        title: 'Aproveite para marcar seus assentos',
+        showConfirmButton: false,
+        timer: 2000
+      })
     const [userName, setUsername] = useState('');
     useEffect( () => {
         firebase

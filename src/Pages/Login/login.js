@@ -2,7 +2,11 @@ import React, {useState} from "react";
 import whiteLogo from "./img/logoBranca.png";
 import {useHistory} from "react-router-dom";
 import { StyleSheet, css } from 'aphrodite';
-import firebase from 'firebase';
+import Input from '../../Components/input';
+import Button from '../../Components/button';
+import { Link, Route} from 'react-router-dom';
+import Home from '../Home/home';
+import firebase from 'firebase'
 
 const Login = () => {
     const history = useHistory();
@@ -17,7 +21,22 @@ const Login = () => {
         .catch(console.error)
     }
 
+    // const handleclick = () => {
+        
+    //         const user = document.querySelector("#email").value;
+    //         const password = document.querySelector('#password').value;
+    //         if (user === "alessandra@gmail.com" && password === "123456") {
+    //             console.log(user, "Email correto")
+    //             window.location="/home"
+    //             return <Link to="/home" />
+    //         }else{
+    //             alert("Dados invalidos");}
+        
+    // }
+   
     return(
+        
+
         <main className={css(styles.login)}>
             <div className={css(styles.containerLogin)}>
                 <div className={css(styles.logoBranca)}>
@@ -41,6 +60,9 @@ const Login = () => {
         </main>
     )
 }
+
+
+
 
 const styles = StyleSheet.create({
     login: {
