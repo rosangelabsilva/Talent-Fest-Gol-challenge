@@ -1,13 +1,11 @@
 import React, {useEffect, useState} from "react";
 import { StyleSheet, css } from 'aphrodite';
-import exit from './img/logout.png';
 import firebase from 'firebase';
 import Header from '../../Components/header';
 import { db } from '../../config';
 
 const Home = () => {
     const [userName, setUsername] = useState('');
-    const user = firebase.auth().currentUser;
     useEffect( () => {
         firebase
         .auth()
@@ -26,9 +24,8 @@ const Home = () => {
     return(
         <>
             <Header 
-                title = {"Bem vinda(o)" + userName}
+                title = {"Bem vinda(o) " + userName}
             />
-                <img  src={exit } />
             <main className="home">
                 <div className={css(styles.locator)}>
                     <p>LOCALIZADOR: <span className={css(styles.code)}>GNRHYZ</span></p>
