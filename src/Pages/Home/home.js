@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, css } from 'aphrodite';
 import firebase from 'firebase';
 import Header from '../../Components/header';
@@ -14,12 +14,12 @@ const Home = () => {
             db.collection('clients')
             .doc(user.uid)
             .get()
-            .then( user => {
-                setUsername(user.data().nome);
+            .then(user => {
+              setUsername(user.data().nome);
             });
-          }
-        })
-      }, [])  
+        }
+      })
+  }, [])
 
     return(
         <>
@@ -69,27 +69,27 @@ const Home = () => {
 };
 
 const styles = StyleSheet.create({
-    headerHome: {
-        backgroundColor: 'red',
-        display: 'flex',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-    },
+  headerHome: {
+    backgroundColor: 'red',
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
 
-    user: {
-        color: '#FFFFFF',
-        fontSize: '20px',
-    },
+  user: {
+    color: '#FFFFFF',
+    fontSize: '20px',
+  },
 
-    exit: {
-        width: '10%',
-    },
+  exit: {
+    width: '10%',
+  },
 
-    locator: {
-        border: '1px solid #000000',
-        margin: '0.3rem',
-        fontSize: '1.3rem',
-    },
+  locator: {
+    border: '1px solid #000000',
+    margin: '0.3rem',
+    fontSize: '1.3rem',
+  },
 
     passageDetail: {
         display: 'flex',
