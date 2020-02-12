@@ -76,7 +76,7 @@ const Confirmation = () => {
             <p classNAme={css(style.label)}>Número da confirmação: 3568920</p>
             <p classNAme={css(style.label)}>Cliente: Alessandra Silva</p>
             
-            <p classNAme={css(style.label)}>Assento reservado: F07</p>
+            <p classNAme={css(style.label)}>Assento reservado: A25</p>
             
 
             <div className={css(style.teste2)}>
