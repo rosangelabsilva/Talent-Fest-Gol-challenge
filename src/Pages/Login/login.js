@@ -8,7 +8,7 @@ const Login = () => {
         <main className={css(styles.login)}>
             <div className={css(styles.containerLogin)}>
                 <div className={css(styles.logoBranca)}>
-                    <img className={css(styles.imgLogo)} src={whiteLogo}/>
+                    <img alt="" className={css(styles.imgLogo)} src={whiteLogo}/>
                     <p className={css(styles.reservas)}>Revervas</p>
                 </div>
                 <div className={css(styles.inputs)}>
