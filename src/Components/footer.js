@@ -1,11 +1,23 @@
 import React from 'react';
 import { StyleSheet, css } from 'aphrodite';
+import {useHistory} from "react-router-dom";
 
 function Footer (props){
+    const history = useHistory();
+
+    const goToHome = () => {
+        history.push('/home')
+    }
+
     return(
        <footer className={css(styles.footer)}>
-           <img className={css(styles.homeIcon)} src="https://i.ibb.co/LtRdX00/home-2-1.png"/>
-           <span className={css(styles.headerTitle)}>{props.content}</span>
+           <img 
+                className={css(styles.homeIcon)} 
+                src="https://i.ibb.co/LtRdX00/home-2-1.png" 
+                onClick={goToHome} 
+                alt="home-icon"
+            />
+           <span className={css(styles.nextPage)}>{props.primarycontent}</span>
        </footer>
     )
 }
@@ -13,6 +25,7 @@ function Footer (props){
 const styles = StyleSheet.create({
     footer: {
         display: 'flex',
+        justifyContent: 'space-around',
         alignItems: 'center',
         backgroundColor: '#FF5A00',
         color: '#fff',
@@ -24,6 +37,13 @@ const styles = StyleSheet.create({
 
    homeIcon: {
     height: '5vh',
+   },
+
+   nextPage: {
+       display: "flex",
+       justifyContent: "flex-end",
+       width: "70%"
+
    }
 })
 
