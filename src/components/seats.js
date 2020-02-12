@@ -12,7 +12,7 @@ function Seats (props){
     )
     
     const changeStatus = () => {
-        console.log("mudou estado");
+        console.log(props.id)
     }
 
     return(

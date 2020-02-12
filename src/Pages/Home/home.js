@@ -3,9 +3,13 @@ import { StyleSheet, css } from 'aphrodite';
 import firebase from 'firebase';
 import Header from '../../Components/header';
 import { db } from '../../config';
+import {useHistory} from "react-router-dom";
 import Swal from 'sweetalert2'
-
+    
 const Home = () => {
+  const history = useHistory();
+  const [userName, setUsername] = useState('');
+  
     Swal.fire({
         position: 'top-end',
         icon: 'warning',
@@ -13,7 +17,7 @@ const Home = () => {
         showConfirmButton: false,
         timer: 2000
       })
-    const [userName, setUsername] = useState('');
+
     useEffect( () => {
         firebase
         .auth()
@@ -28,6 +32,10 @@ const Home = () => {
         }
       })
   }, [])
+
+      const goToSeats = () => {
+        history.push('/seats')
+      }
 
     return(
         <>
@@ -53,6 +61,7 @@ const Home = () => {
                         </ul>
                     </div>
                 </div>
+
                 {/* <div className={css(styles.locator)}>
                     <p>LOCALIZADOR: <span className={css(styles.code)}>GAFHFI</span></p>
                     <p className={css(styles.status)}>VOLTA - Voo G7 1895</p>
