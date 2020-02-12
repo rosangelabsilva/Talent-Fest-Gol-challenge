@@ -18,6 +18,17 @@ const Payment = () => {
             <Header title ={"Pagamento da reserva"}/>
             {/* <Seats /> */}
             <main className ={css(styles.payment)}>
+            <h1>Assentos reservados</h1>
+                <form className ={css(styles.form)}>
+                    <label className ={css(styles.label)}>Passageiro</label>
+                    <label className ={css(styles.label)}>Assento</label>
+                    <label className ={css(styles.label)}>Valor</label>
+                </form>
+                <form className ={css(styles.form)}>
+                    <label className ={css(styles.label2)}>Alessandra Silva</label>
+                    <label className ={css(styles.label2)}>F07</label>
+                    <label className ={css(styles.label2)}>R$ 30,00</label>
+                </form>
                 <form action="/processar_pagamento" method="post" id="pay" name="pay" >
                     {/* <fieldset> */}
                         <ul>
@@ -119,6 +130,14 @@ const styles = StyleSheet.create({
 
     securityKey: {
         height: '2rem',
+    },
+
+    label: {
+        margin: 20,
+        fontWeight: 'bolder'
+    },
+    label2:{
+        margin: 15
     }
 })
 
