@@ -21,18 +21,18 @@ const Login = () => {
         .catch(console.error)
     }
 
-    const handleclick = () => {
+    // const handleclick = () => {
         
-            const user = document.querySelector("#email").value;
-            const password = document.querySelector('#password').value;
-            if (user === "alessandra@gmail.com" && password === "123456") {
-                console.log(user, "Email correto")
-                window.location="/home"
-                return <Link to="/home" />
-            }else{
-                alert("Dados invalidos");}
+    //         const user = document.querySelector("#email").value;
+    //         const password = document.querySelector('#password').value;
+    //         if (user === "alessandra@gmail.com" && password === "123456") {
+    //             console.log(user, "Email correto")
+    //             window.location="/home"
+    //             return <Link to="/home" />
+    //         }else{
+    //             alert("Dados invalidos");}
         
-    }
+    // }
    
     return(
         
