@@ -6,6 +6,7 @@ import Input from '../../Components/input';
 import Button from '../../Components/button';
 import { Link, Route} from 'react-router-dom';
 import Home from '../Home/home';
+import firebase from 'firebase'
 
 const Login = () => {
     const history = useHistory();
@@ -39,22 +40,11 @@ const Login = () => {
         <main className={css(styles.login)}>
             <div className={css(styles.containerLogin)}>
                 <div className={css(styles.logoBranca)}>
-                    <img className={css(styles.imgLogo)} src={whiteLogo}/>
+                    <img className={css(styles.imgLogo)} src={whiteLogo} alt="logo"/>
                     <p className={css(styles.reservas)}>Reservas</p>
                 </div>
                 <div className={css(styles.inputs)}>
                     <label className={css(styles.reservas1)}>E-mail</label>
-<<<<<<< HEAD
-                    <Input className={css(styles.input)} id="email" placeholder='seuemail@mail.com'/>
-                </div>
-                <div className={css(styles.inputs)}>
-                    <label className={css(styles.reservas1)}>Senha</label>
-                    <Input className={css(styles.input)}id="password" type="password" placeholder='senha de 6 digitos'/>
-                </div>
-                <div className={css(styles.button)}>
-                    <Button className={css(styles.entrar)} name= "Entrar" onClick = {()=> handleclick()}></Button>
-
-=======
                     <input className={css(styles.input)} placeholder='seuemail@mail.com' 
                         onChange={(e) => setEmail(e.target.value)} type="email"/>
                 </div>
@@ -65,7 +55,6 @@ const Login = () => {
                 </div>
                 <div className={css(styles.button)}>
                     <button className={css(styles.entrar)} onClick={login}>Entrar</button>
->>>>>>> 15b23d32a786846b4a23059cb7601f5dc1208e78
                 </div>
             </div>
         </main>
