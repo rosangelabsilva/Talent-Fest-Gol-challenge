@@ -17,7 +17,7 @@ function Footer (props){
                 onClick={goToHome} 
                 alt="home-icon"
             />
-           <span className={css(styles.nextPage)}>{props.primarycontent}</span>
+           <span className={css(styles.nextPage)} onClick={props.handleClick}>{props.primarycontent}</span>
        </footer>
     )
 }

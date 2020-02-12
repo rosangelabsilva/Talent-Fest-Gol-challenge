@@ -3,9 +3,13 @@ import { StyleSheet, css } from 'aphrodite';
 import firebase from 'firebase';
 import Header from '../../Components/header';
 import { db } from '../../config';
+import {useHistory} from "react-router-dom";
 import Swal from 'sweetalert2'
-
+    
 const Home = () => {
+  const history = useHistory();
+  const [userName, setUsername] = useState('');
+  
     Swal.fire({
         position: 'top-end',
         icon: 'warning',
@@ -13,7 +17,7 @@ const Home = () => {
         showConfirmButton: false,
         timer: 2000
       })
-    const [userName, setUsername] = useState('');
+
     useEffect( () => {
         firebase
         .auth()
@@ -29,13 +33,17 @@ const Home = () => {
       })
   }, [])
 
+      const goToSeats = () => {
+        history.push('/seats')
+      }
+
     return(
         <>
             <Header 
                 title = {"Bem vinda(o) " + userName}
             />
             <main className="home">
-                <div className={css(styles.locator)}>
+                <div className={css(styles.locator)} onClick={goToSeats}>
                     <p className={css(styles.locatorTitle)}>LOCALIZADOR: <span className={css(styles.code)}>GNRHYZ</span></p>
                     <p className={css(styles.status)}>IDA - voo G3 1265</p>
                     <div className={css(styles.passageDetail)}>
@@ -53,6 +61,7 @@ const Home = () => {
                         </ul>
                     </div>
                 </div>
+
                 {/* <div className={css(styles.locator)}>
                     <p>LOCALIZADOR: <span className={css(styles.code)}>GAFHFI</span></p>
                     <p className={css(styles.status)}>VOLTA - Voo G7 1895</p>

@@ -72,11 +72,11 @@ const Confirmation = () => {
                 <div className={css(style.teste)}>
 
             <p classNAme={css(style.label)}>Reserva de assento finalizado!</p>
-            <p classNAme={css(style.label)}>IDA - Voo NUMERO</p>
-            <p classNAme={css(style.label)}>Número da confirmação: NUMERO</p>
-            <p classNAme={css(style.label)}>Cliente: CLIENTE</p>
+            <p classNAme={css(style.label)}>IDA - Voo GNRHYZ</p>
+            <p classNAme={css(style.label)}>Número da confirmação: 3568920</p>
+            <p classNAme={css(style.label)}>Cliente: Alessandra Silva</p>
             
-            <p classNAme={css(style.label)}>Assento reservado: ASSENTO</p>
+            <p classNAme={css(style.label)}>Assento reservado: F07</p>
             
 
             <div className={css(style.teste2)}>
