@@ -43,7 +43,7 @@ const Home = () => {
                 title = {"Bem vinda(o) " + userName}
             />
             <main className="home">
-                <div className={css(styles.locator)}>
+                <div className={css(styles.locator)} onClick={goToSeats}>
                     <p className={css(styles.locatorTitle)}>LOCALIZADOR: <span className={css(styles.code)}>GNRHYZ</span></p>
                     <p className={css(styles.status)}>IDA - voo G3 1265</p>
                     <div className={css(styles.passageDetail)}>
