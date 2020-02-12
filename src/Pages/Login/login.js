@@ -21,18 +21,18 @@ const Login = () => {
         .catch(console.error)
     }
 
-    const handleclick = () => {
+    // const handleclick = () => {
         
-            const user = document.querySelector("#email").value;
-            const password = document.querySelector('#password').value;
-            if (user === "alessandra@gmail.com" && password === "123456") {
-                console.log(user, "Email correto")
-                window.location="/home"
-                return <Link to="/home" />
-            }else{
-                alert("Dados invalidos");}
+    //         const user = document.querySelector("#email").value;
+    //         const password = document.querySelector('#password').value;
+    //         if (user === "alessandra@gmail.com" && password === "123456") {
+    //             console.log(user, "Email correto")
+    //             window.location="/home"
+    //             return <Link to="/home" />
+    //         }else{
+    //             alert("Dados invalidos");}
         
-    }
+    // }
    
     return(
         
@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#FF5A00',
         height: '100vh',
-        justifyContent: 'space-around',
     },
 
     logoBranca: {
@@ -83,6 +82,9 @@ const styles = StyleSheet.create({
 
     imgLogo: {
         width: '65%',
+        "@media (min-width: 700px)": {
+            width: '30%'
+        }
     },
 
     reservas: {
@@ -99,7 +101,9 @@ const styles = StyleSheet.create({
         display: 'flex',
         justifyContent: 'left',
         width: '100%',
-
+        "@media (min-width: 700px)": {
+            justifyContent: 'center'
+        }
     },
 
     inputs: {
@@ -124,7 +128,7 @@ const styles = StyleSheet.create({
         height: '65%',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         alignItems: 'center',
     },
 
@@ -133,7 +137,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         color: 'White',
         fontSize: '1.5rem',
-
+        margin: '25px'
     },
 
     entrar: {
