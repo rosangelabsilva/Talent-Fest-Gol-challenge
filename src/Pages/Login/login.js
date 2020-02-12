@@ -1,8 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 import whiteLogo from "./img/logoBranca.png";
+import {useHistory} from "react-router-dom";
 import { StyleSheet, css } from 'aphrodite';
+import firebase from 'firebase';
 
 const Login = () => {
+    const history = useHistory();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const login = (e) => {
+        firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password)
+        .then(history.push('/home'))
+        .catch(console.error)
+    }
 
     return(
         <main className={css(styles.login)}>
@@ -13,14 +26,16 @@ const Login = () => {
                 </div>
                 <div className={css(styles.inputs)}>
                     <label className={css(styles.reservas1)}>E-mail</label>
-                    <input className={css(styles.input)} placeholder='seuemail@mail.com'/>
+                    <input className={css(styles.input)} placeholder='seuemail@mail.com' 
+                        onChange={(e) => setEmail(e.target.value)} type="email"/>
                 </div>
                 <div className={css(styles.inputs)}>
                     <label className={css(styles.reservas1)}>Senha</label>
-                    <input className={css(styles.input)} placeholder='senha de 6 digitos'/>
+                    <input className={css(styles.input)} placeholder='senha de 6 digitos'
+                        onChange={(e) => setPassword(e.target.value)} type="password"/>
                 </div>
                 <div className={css(styles.button)}>
-                    <button className={css(styles.entrar)}>Entrar</button>
+                    <button className={css(styles.entrar)} onClick={login}>Entrar</button>
                 </div>
             </div>
         </main>

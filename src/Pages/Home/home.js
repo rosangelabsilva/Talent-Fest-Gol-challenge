@@ -1,16 +1,34 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { StyleSheet, css } from 'aphrodite';
-import exit from './img/logout.png'
-
+import exit from './img/logout.png';
+import firebase from 'firebase';
+import Header from '../../Components/header';
+import { db } from '../../config';
 
 const Home = () => {
+    const [userName, setUsername] = useState('');
+    const user = firebase.auth().currentUser;
+    useEffect( () => {
+        firebase
+        .auth()
+        .onAuthStateChanged( (user) => {
+          if(user){
+            db.collection('clients')
+            .doc(user.uid)
+            .get()
+            .then( user => {
+                setUsername(user.data().nome);
+            });
+          }
+        })
+      }, [])  
 
     return(
         <>
-            <header className={css(styles.headerHome)}>
-                <p className={css(styles.user)}>Olá <span>Alessandra,</span></p>
-                <img className={css(styles.exit)} alt="" src={exit } />
-            </header>
+            <Header 
+                title = {"Bem vinda(o)" + userName}
+            />
+                <img  src={exit } />
             <main className="home">
                 <div className={css(styles.locator)}>
                     <p>LOCALIZADOR: <span className={css(styles.code)}>GNRHYZ</span></p>
