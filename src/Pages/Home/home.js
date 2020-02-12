@@ -3,8 +3,10 @@ import { StyleSheet, css } from 'aphrodite';
 import firebase from 'firebase';
 import Header from '../../Components/header';
 import { db } from '../../config';
+import {useHistory} from "react-router-dom";
 
 const Home = () => {
+    const history = useHistory();
     const [userName, setUsername] = useState('');
     useEffect( () => {
         firebase
@@ -21,13 +23,17 @@ const Home = () => {
         })
       }, [])  
 
+      const goToSeats = () => {
+        history.push('/seats')
+      }
+
     return(
         <>
             <Header 
                 title = {"Bem vinda(o) " + userName}
             />
             <main className="home">
-                <div className={css(styles.locator)}>
+                <div className={css(styles.locator)} onClick={goToSeats}>
                     <p>LOCALIZADOR: <span className={css(styles.code)}>GNRHYZ</span></p>
                     <p className={css(styles.status)}>IDA - voo G3 1265</p>
                     <div className={css(styles.passageDetail)}>
@@ -41,24 +47,6 @@ const Home = () => {
                             <li className={css(styles.lists)}>Cuiaba (CGB)</li>
                             <li className={css(styles.lists)}>Mato Grosso</li>
                             <li className={css(styles.lists)}> 15/02/2020 -11h20</li>
-                            <li className={css(styles.lists)}>Check-in ainda não realizado</li>
-                        </ul>
-                    </div>
-                </div>
-                <div className={css(styles.locator)}>
-                    <p>LOCALIZADOR: <span className={css(styles.code)}>GAFHFI</span></p>
-                    <p className={css(styles.status)}>VOLTA - Voo G7 1895</p>
-                    <div className={css(styles.passageDetail)}>
-                        <ul>
-                            <li className={css(styles.lists)}>Cuiabá (CGB)</li>
-                            <li className={css(styles.lists)}>Mato Grosso</li>
-                            <li className={css(styles.lists)}>21/02/2020 - 15h00</li>
-                            <li className={css(styles.lists)}>Voo Direto</li>
-                        </ul>
-                        <ul>
-                            <li className={css(styles.lists)}>Guarulhos (CGB)</li>
-                            <li className={css(styles.lists)}>São Paulo</li>
-                            <li className={css(styles.lists)}>21/02/2020 - 16h20</li>
                             <li className={css(styles.lists)}>Check-in ainda não realizado</li>
                         </ul>
                     </div>
