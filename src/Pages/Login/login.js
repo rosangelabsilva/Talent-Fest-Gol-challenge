@@ -1,31 +1,54 @@
 import React from "react";
 import whiteLogo from "./img/logoBranca.png";
 import { StyleSheet, css } from 'aphrodite';
+import Input from '../../Components/input';
+import Button from '../../Components/button';
+import { Link, Route} from 'react-router-dom';
+import Home from '../Home/home';
 
 const Login = () => {
 
+    const handleclick = () => {
+        
+            const user = document.querySelector("#email").value;
+            const password = document.querySelector('#password').value;
+            if (user === "alessandra@gmail.com" && password === "123456") {
+                console.log(user, "Email correto")
+                window.location="/home"
+                return <Link to="/home" />
+            }else{
+                alert("Dados invalidos");}
+        
+    }
+   
     return(
+        
+
         <main className={css(styles.login)}>
             <div className={css(styles.containerLogin)}>
                 <div className={css(styles.logoBranca)}>
                     <img className={css(styles.imgLogo)} src={whiteLogo}/>
-                    <p className={css(styles.reservas)}>Revervas</p>
+                    <p className={css(styles.reservas)}>Reservas</p>
                 </div>
                 <div className={css(styles.inputs)}>
                     <label className={css(styles.reservas1)}>E-mail</label>
-                    <input className={css(styles.input)} placeholder='seuemail@mail.com'/>
+                    <Input className={css(styles.input)} id="email" placeholder='seuemail@mail.com'/>
                 </div>
                 <div className={css(styles.inputs)}>
                     <label className={css(styles.reservas1)}>Senha</label>
-                    <input className={css(styles.input)} placeholder='senha de 6 digitos'/>
+                    <Input className={css(styles.input)}id="password" type="password" placeholder='senha de 6 digitos'/>
                 </div>
                 <div className={css(styles.button)}>
-                    <button className={css(styles.entrar)}>Entrar</button>
+                    <Button className={css(styles.entrar)} name= "Entrar" onClick = {()=> handleclick()}></Button>
+
                 </div>
             </div>
         </main>
     )
 }
+
+
+
 
 const styles = StyleSheet.create({
     login: {
