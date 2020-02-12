@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
         fontSize: '3vh',
         fontWeight: 'bold',
         height: '7vh',
+        padding: '0.5rem',
         boxShadow: '1px 0px 10px 0px #a6a6a6',
     },
 
