@@ -21,7 +21,7 @@ function Header (props){
     return(
        <header className={css(styles.header)}>
            <span className={css(styles.headerTitle)}>{props.title}</span>
-           <img src={exit} className={css(styles.logout)} onClick={logout}/>{props.secondTitle}
+           <img src={exit} className={css(styles.logout)} onClick={logout} alt='sair'/>{props.secondTitle}
        </header>
     )
 }
@@ -30,11 +30,13 @@ const styles = StyleSheet.create({
     header: {
         display: 'flex',
         alignItems: 'center',
+        justifyContent: 'space-between',
         backgroundColor: '#FF5A00',
         color: '#fff',
         fontSize: '3vh',
         fontWeight: 'bold',
         height: '7vh',
+        padding: '0.5rem',
         boxShadow: '1px 0px 10px 0px #a6a6a6',
     },
 
@@ -43,7 +45,8 @@ const styles = StyleSheet.create({
     },
     
     logout: {
-        width: '6vw'
+        width: '6vw',
+        marginRight: 20
     }
 })
 
