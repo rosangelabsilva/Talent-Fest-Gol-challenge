@@ -22,7 +22,7 @@ const Login = () => {
             <div className={css(styles.containerLogin)}>
                 <div className={css(styles.logoBranca)}>
                     <img className={css(styles.imgLogo)} src={whiteLogo} alt="logo"/>
-                    <p className={css(styles.reservas)}>Revervas</p>
+                    <p className={css(styles.reservas)}>Reservas</p>
                 </div>
                 <div className={css(styles.inputs)}>
                     <label className={css(styles.reservas1)}>E-mail</label>
@@ -49,7 +49,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#FF5A00',
         height: '100vh',
-        justifyContent: 'space-around',
     },
 
     logoBranca: {
@@ -61,6 +60,9 @@ const styles = StyleSheet.create({
 
     imgLogo: {
         width: '65%',
+        "@media (min-width: 700px)": {
+            width: '30%'
+        }
     },
 
     reservas: {
@@ -77,7 +79,9 @@ const styles = StyleSheet.create({
         display: 'flex',
         justifyContent: 'left',
         width: '100%',
-
+        "@media (min-width: 700px)": {
+            justifyContent: 'center'
+        }
     },
 
     inputs: {
@@ -102,7 +106,7 @@ const styles = StyleSheet.create({
         height: '65%',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         alignItems: 'center',
     },
 
@@ -111,7 +115,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         color: 'White',
         fontSize: '1.5rem',
-
+        margin: '25px'
     },
 
     entrar: {
