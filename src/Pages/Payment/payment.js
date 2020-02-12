@@ -4,6 +4,7 @@ import { StyleSheet, css } from 'aphrodite';
 import Header from '../../Components/header';
 import Footer from '../../Components/footer';
 import {useHistory} from 'react-router-dom';
+import Seats from "../../Components/seats";
 
 
 const Payment = () => {
@@ -15,6 +16,7 @@ const Payment = () => {
     return(
         <>
             <Header title ={"Pagamento da reserva"}/>
+            <Seats />
             <main className ={css(styles.payment)}>
                 <form action="/processar_pagamento" method="post" id="pay" name="pay" >
                     <fieldset>
