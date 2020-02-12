@@ -2,7 +2,11 @@ import React, {useState} from "react";
 import whiteLogo from "./img/logoBranca.png";
 import {useHistory} from "react-router-dom";
 import { StyleSheet, css } from 'aphrodite';
-import firebase from 'firebase';
+import Input from '../../Components/input';
+import Button from '../../Components/button';
+import { Link, Route} from 'react-router-dom';
+import Home from '../Home/home';
+import firebase from 'firebase'
 
 const Login = () => {
     const history = useHistory();
@@ -17,12 +21,27 @@ const Login = () => {
         .catch(console.error)
     }
 
+    // const handleclick = () => {
+        
+    //         const user = document.querySelector("#email").value;
+    //         const password = document.querySelector('#password').value;
+    //         if (user === "alessandra@gmail.com" && password === "123456") {
+    //             console.log(user, "Email correto")
+    //             window.location="/home"
+    //             return <Link to="/home" />
+    //         }else{
+    //             alert("Dados invalidos");}
+        
+    // }
+   
     return(
+        
+
         <main className={css(styles.login)}>
             <div className={css(styles.containerLogin)}>
                 <div className={css(styles.logoBranca)}>
                     <img className={css(styles.imgLogo)} src={whiteLogo} alt="logo"/>
-                    <p className={css(styles.reservas)}>Revervas</p>
+                    <p className={css(styles.reservas)}>Reservas</p>
                 </div>
                 <div className={css(styles.inputs)}>
                     <label className={css(styles.reservas1)}>E-mail</label>
@@ -42,6 +61,9 @@ const Login = () => {
     )
 }
 
+
+
+
 const styles = StyleSheet.create({
     login: {
         display: 'flex',
@@ -49,7 +71,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#FF5A00',
         height: '100vh',
-        justifyContent: 'space-around',
     },
 
     logoBranca: {
@@ -61,6 +82,9 @@ const styles = StyleSheet.create({
 
     imgLogo: {
         width: '65%',
+        "@media (min-width: 700px)": {
+            width: '30%'
+        }
     },
 
     reservas: {
@@ -77,7 +101,9 @@ const styles = StyleSheet.create({
         display: 'flex',
         justifyContent: 'left',
         width: '100%',
-
+        "@media (min-width: 700px)": {
+            justifyContent: 'center'
+        }
     },
 
     inputs: {
@@ -102,7 +128,7 @@ const styles = StyleSheet.create({
         height: '65%',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         alignItems: 'center',
     },
 
@@ -111,7 +137,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         color: 'White',
         fontSize: '1.5rem',
-
+        margin: '25px'
     },
 
     entrar: {
