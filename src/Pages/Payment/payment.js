@@ -26,7 +26,7 @@ const Payment = () => {
                 </form>
                 <form className ={css(styles.form)}>
                     <label className ={css(styles.label2)}>Alessandra Silva</label>
-                    <label className ={css(styles.label2)}>F07</label>
+                    <label className ={css(styles.label2)}>A25</label>
                     <label className ={css(styles.label2)}>R$ 30,00</label>
                 </form>
                 <form action="/processar_pagamento" method="post" id="pay" name="pay" >
@@ -48,7 +48,7 @@ const Payment = () => {
                             </li> */}
                             <li className ={css(styles.li)}>
                                 <label for="cardholderName" className ={css(styles.informationInput)}>Nome do titular:</label>
-                                <input type="text" id="cardholderName" placeholder="AComo está gravado no cartão" className ={css(styles.InputPayment)}/>
+                                <input type="text" id="cardholderName" placeholder="Como está gravado no cartão" className ={css(styles.InputPayment)}/>
                             </li>
                             <li className ={css(styles.li)}>
                                 <label for="docType" className ={css(styles.informationInput)}>CPF:</label>

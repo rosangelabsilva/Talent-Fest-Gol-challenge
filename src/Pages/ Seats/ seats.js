@@ -75,7 +75,7 @@ const Seats = () => {
     const goToPayment = () => {
         selectedSeat === ""
             ? alert("Selecione um assento")
-            : history.push('/payment')
+            : console.log('oi')
     }
 
     const selecteASeat = (seat, status) => {
