@@ -18,7 +18,7 @@ const Payment = () => {
             <Header title ={"Pagamento da reserva"}/>
             {/* <Seats /> */}
             <main className ={css(styles.payment)}>
-            <h1>Assentos reservados</h1>
+            <h1 className ={css(styles.title)}>Assentos reservados</h1>
                 <form className ={css(styles.form)}>
                     <label className ={css(styles.label)}>Passageiro</label>
                     <label className ={css(styles.label)}>Assento</label>
@@ -31,12 +31,12 @@ const Payment = () => {
                 </form>
                 <form action="/processar_pagamento" method="post" id="pay" name="pay" >
                     {/* <fieldset> */}
-                        <ul>
+                        <ul className ={css(styles.ul)}>
                             <li className ={css(styles.li)}>
                                 <label className ={css(styles.informationInput)} for="cardNumber">Número do cartão:</label>
                                 <input type="text" id="cardNumber" placeholder="4509 9535 6623 3704" className ={css(styles.InputPayment)}/>
                             </li>
-                            <li className ={css(styles.expirationKey)}>
+                            {/* <li className ={css(styles.expirationKey)}>
                                 <li className ={css(styles.li)}>
                                     <label className ={css(styles.informationInput)}>Chave de Segurança:</label>
                                     <input type="text" id="securityCode"  placeholder="123" className ={css(styles.securityKey)}/>
@@ -45,7 +45,7 @@ const Payment = () => {
                                     <label className ={css(styles.informationInput)}>Vencimento:</label>
                                     <input type="text" id="cardExpirationMonth"  placeholder="11/22" className ={css(styles.dueDate)} />
                                 </li>
-                            </li>
+                            </li> */}
                             <li className ={css(styles.li)}>
                                 <label for="cardholderName" className ={css(styles.informationInput)}>Nome do titular:</label>
                                 <input type="text" id="cardholderName" placeholder="AComo está gravado no cartão" className ={css(styles.InputPayment)}/>
@@ -55,7 +55,14 @@ const Payment = () => {
                                 <input id="docType" placeholder="555.555.555-55" className ={css(styles.InputPayment)}></input>
                             </li>
                         </ul>
-                        <button className ={css(styles.ConfirmBuy)} onClick = {payment}>Confirmar</button>
+                        
+                        <div className ={css(styles.botao)}>
+                            <button className ={css(styles.ConfirmBuy)} onClick = {payment}>
+                                <span>
+                                 Confirmar
+                                </span>
+                            </button>
+                        </div>
                 </form>
             </main>
             <Footer
@@ -73,7 +80,22 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         justifyContent: 'space-around',
+        alignItems: 'center',
+        height: '67%',
+    },
+
+    ul: {
+        paddingLeft: 0,
+    },
+
+    botao: {
+        display: 'flex',
+        justifyContent: 'center',
         alignItems: 'center'
+    },
+
+    title: {
+        fontSize: '1.5rem',
     },
 
     containerPayment: {
@@ -94,6 +116,7 @@ const styles = StyleSheet.create({
         paddingLeft: '25%',
         display: 'flex',
         justifyContent: 'center',
+        paddingRight: '24%'
     },
 
     ConfirmBuy2: {
@@ -122,6 +145,7 @@ const styles = StyleSheet.create({
         listStyleType: 'none',
         display: 'flex',
         flexDirection: 'column',
+        padding: '.4rem',
     },
 
     expirationKey: {
