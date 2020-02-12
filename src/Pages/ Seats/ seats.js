@@ -115,9 +115,14 @@ const Seats = () => {
             />
             <aside className={css(styles.passengerContainer)}>
                     {passengers.map(passenger => {
-                    return <div>{passenger}</div>
+                    return <div className={css(styles.passengerName)}>{passenger}</div>
                 })}
-                <div> Assento {selectedSeat}</div>
+                <div className={css(styles.selectedSeat)}> 
+                    Assento 
+                    <div className={css(styles.seatNumber)}>
+                        {selectedSeat}
+                    </div>
+                </div>
             </aside>
             <article className={css(styles.seatContainer)}>
                 <section className={css(styles.seatCollumns, styles.columnContainer)}>
@@ -201,13 +206,22 @@ const Seats = () => {
 
 const styles = StyleSheet.create({
     passengerContainer: {
-        height: '12vh'
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        width: '80%',
+        marginLeft: '8vw',
+        height: '8vh'
+    },
+
+    passengerName: {
+        fontSize: 20
     },
 
     seatContainer: {
         display: 'flex',
         flexDirection: 'column',
-        height: '68vh'
+        height: '70vh'
     },
 
     seatCollumns: {
@@ -255,6 +269,25 @@ const styles = StyleSheet.create({
         width: '90vw',
         marginTop: '-3vh',
         marginLeft: '6vw'
+    },
+
+    selectedSeat: {
+        display: 'flex',
+        alignItems: 'center',
+        width: '30vw'
+    },
+
+    seatNumber: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft: '1vw',
+        backgroundColor: "#FF5A00",
+        width: '15vw',
+        height: '10vw',
+        borderRadius: '2vw',
+        fontWeight: 'bold',
+        color: '#fff'
     }
 })
 
