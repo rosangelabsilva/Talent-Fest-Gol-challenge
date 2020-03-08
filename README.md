@@ -11,10 +11,10 @@ Enviar um comunicado para o passageiro informando a disponibilidade do seus asse
 
 ## Tecnologias:
 
-Javascript
-HTML
-Aphrodite
-React Hooks
-Firebase
-Swal
-mailchimp (marketing mail)
+* Javascript;
+* HTML;
+* Aphrodite;
+* React Hooks;
+* Firebase;
+* Swal;
+* mailchimp (marketing mail).
